@@ -1,0 +1,19 @@
+name: Compile report.tex
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: repaction/texlive@main
+        with:
+          tex_files: |
+            report.tex
+      - name: Upload art
+        uses: actions/upload-artifact@v2
+        with:
+          name: PDF report
+          path: report.pdf
+          if-no-files-found: error
