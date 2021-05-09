@@ -1,0 +1,126 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+% Resten af pakkerne
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{flafter}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{lscape}
+\usepackage{xargs}
+\usepackage{tabularx}
+\usepackage{comment}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{hyperref} 
+
+\usepackage{listings}
+
+\usepackage{ragged2e}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+
+\lstnewenvironment{code}[1][]%
+{
+   \noindent
+   \minipage{\linewidth} 
+   \vspace{0.5\baselineskip}
+   \lstset{language=java, basicstyle=\ttfamily\footnotesize,frame=single,#1}}
+{\endminipage}
+
+
+\lstset{
+    stringstyle=\color{mygreen},            % changing string colour to green
+    frame=single,                           % adds a frame around the code
+    language=Java,                          % the language of the code
+    breaklines=true,                        % sets automatic line breaking
+    basicstyle=\small,                      % the size of the fonts that are used for the code
+    keywordstyle=\color{blue},              % keyword style
+    morekeywords={var, UUID, ROLE, EMAIL},  % if you want to add more keywords to the set
+    numbers=left,                           % % where to put the line-numbers; possible values are (none, left, right)
+    numberstyle=\small,                     % the style that is used for the line-numbers
+    commentstyle=\color{mygreen},           % comment style
+    captionpos=b,                           % sets the caption-position to bottom
+    showstringspaces=false,                 % removes spaces in string
+    inputencoding=utf8,
+    extendedchars=true,
+}
+
+\lstset{literate=%
+{æ}{{\ae}}1
+{å}{{\aa}}1
+{ø}{{\o}}1
+{Æ}{{\AE}}1
+{Å}{{\AA}}1
+{Ø}{{\O}}1
+}
+
+\usepackage{ifthen}
+
+\usepackage{xcolor}
+% \usepackage{csvsimple}
+\usepackage{longtable}
+
+% Margin
+\usepackage{geometry}
+\geometry{a4paper,  total={170mm,250mm},
+ left=20mm,
+ top=25mm}
+
+
+% New Commands
+\newcommand\myworries[1]{\textcolor{red}{#1}} 
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+
+% Needs to be the last package included
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black,
+}
+
+\setlength\parindent{0pt} % Removes indent
+
+\begin{document}
+    % Removes page numbers
+    \pagenumbering{gobble}
+    \renewcommand{\thesection}{\Roman{section}} 
+    \renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
+    \input{tex/cover.tex}
+    \newpage
+    
+    \setcounter{tocdepth}{2} % anything below subsection will not be added
+    \input{tex/table_of_contents}
+    \newpage
+    
+    % Start counting from this line
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+
+    \renewcommand{\thesection}{\arabic{section}} 
+    \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+    \setcounter{section}{0}
+
+    \newpage
+
+    \input{tex/part_one.tex}
+
+    % Removes page numbering
+    \pagenumbering{gobble}
+    \appendix % Bruges til bilag, så den laver bilag indholdfortegnelse og overskrifter
+    \input{tex/appendix.tex}
+
+\end{document}
