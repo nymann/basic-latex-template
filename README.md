@@ -1,7 +1,17 @@
-### Basic LaTeX template
+# Basic LaTeX template
 
-##### Using docker
-A simple `Dockerfile` is provided if you are in an environment with docker but without TexLive. This is how you use it:
+## Workflows
+
+##### GNU Make
+| Command      | Description                               |
+| ---          | ---                                       |
+| `make`       | Compiles the `report.tex` file.           |
+| `make clean` | Cleans the directory for any build files. |
+
+
+##### Docker
+A simple `Dockerfile` is provided if you are in an environment with Docker but
+without TexLive. This is how you use it:
 
 ```sh
 docker build -t my_report -f Dockerfile .
