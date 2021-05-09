@@ -2,6 +2,11 @@
 
 ## Workflows
 
+I have a terminal window open with `ls report.tex chapters/*.tex | entr make`
+and `report.pdf` open in Zathura. This way when I make any changes to any of the
+TeX files the report is automatically recompiled thanks to `entr` and Zathura
+automatically refreshes the document.
+
 ##### GNU Make
 | Command      | Description                               |
 | ---          | ---                                       |
