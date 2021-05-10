@@ -9,10 +9,11 @@ jobs:
         with:
           lfs: true
       - name: Compile LaTeX document
-        uses: repaction/texlive@main
+        uses: dante-ev/latex-action@latest
         with:
-          tex_files: |
-            report.tex
+          root_file: report.tex
+          compiler: lualatex
+          args: -interaction=nonstopmode -shell-escape
       - name: Upload art
         uses: actions/upload-artifact@v2
         with:
