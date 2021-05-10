@@ -6,3 +6,4 @@ tags
 *.log
 *.out
 *.toc
+_minted-report/

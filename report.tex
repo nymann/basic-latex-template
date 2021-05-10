@@ -10,13 +10,31 @@
 \usepackage{titlesec}
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX} 
-\setmainfont{Newsreader}
-\setsansfont{Lato}
-\setmonofont{Source Code Pro}
-%\setmainfont[ExternalLocation=fonts/]{Newsreader-Regular.otf}
-% [BoldFont=Newsreader-Bold.otf,
-% ItalicFont=Newsreader-Italic.otf,
-% BoldItalicFont=Newsreader-BoldItalic.otf]
+%\setmainfont{Newsreader}
+\setsansfont{Lato}[
+	Path = fonts/Lato/,
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
+]
+\setmonofont{SourceCodePro}[
+	Path = fonts/SourceCodePro/,
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
+]
+\setmainfont{Newsreader}[
+	Path = fonts/Newsreader/,
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
+]
 
 \titleformat{\chapter}[display]
   {\normalfont\sffamily\huge\bfseries}
