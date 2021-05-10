@@ -1,5 +1,5 @@
 \documentclass[12pt,twoside]{report}
-\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,headheight=15pt]{geometry}
+\usepackage[a4paper,left=20mm,right=20mm,top=25mm,bottom=25mm,headheight=15pt]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
@@ -35,8 +35,7 @@
 	BoldItalicFont = *-BoldItalic,
 ]
 
-\titleformat
-    {\chapter} % type of title to format
+\titleformat{\chapter} % type of title to format
     [display] % shape
     {\sffamily\Huge\bfseries\raggedleft} % how to format it
     {\thechapter} % label
@@ -44,23 +43,34 @@
     {\titlerule\vspace{2pt}\titlerule[1pt]\vspace{5pt}}
 
 \titleformat{\section}
-    {\sffamily\Large\bfseries}{\thesection}{1em}{}
+    {\sffamily\Large\bfseries}
+    {\thesection}
+    {1em}
+    {}
 \titleformat{\subsection}
-    {\sffamily\large\bfseries}{\thesubsection}{1em}{}
+    {\sffamily\large\bfseries}
+    {\thesubsection}
+    {1em}
+    {}
 \titleformat{\subsubsection}
-    {\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
+    {\sffamily\normalsize\bfseries}
+    {\thesubsubsection}
+    {1em}
+    {}
 
 
 % code
 \usepackage{minted}
-\setminted{fontsize=\footnotesize}
+\setminted{fontsize=\small}
 
 % Set headers
 \usepackage{fancyhdr}
 \fancypagestyle{custom}{
 	\fancyhf{}
-	\fancyhead[L]{\sffamily{\thepage}}
-	\fancyhead[R]{\sffamily{\leftmark}}
+	\fancyhead[RE]{\sffamily{\thepage}}
+	\fancyhead[LO]{\sffamily{\thepage}}
+	\fancyhead[LE]{\sffamily{\rightmark}}
+	\fancyhead[RO]{\sffamily{\leftmark}}
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}
 }
