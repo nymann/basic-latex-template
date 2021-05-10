@@ -2,11 +2,55 @@
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-
 \graphicspath{ {images/} }
+\usepackage{lipsum}
 
+
+% Font
+\usepackage{titlesec}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX} 
+\setmainfont{Newsreader}
+\setsansfont{Lato}
+\setmonofont{Source Code Pro}
+%\setmainfont[ExternalLocation=fonts/]{Newsreader-Regular.otf}
+% [BoldFont=Newsreader-Bold.otf,
+% ItalicFont=Newsreader-Italic.otf,
+% BoldItalicFont=Newsreader-BoldItalic.otf]
+
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\huge\bfseries}
+  {\thechapter}{20pt}{\Huge}
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries}
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\sffamily\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+
+
+% code
+\usepackage{minted}
+\usepackage{color}
+
+% Set headers
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+\fancypagestyle{custom}{
+	\fancyhf{}
+	\fancyhead[L]{\sffamily{\thepage}}
+	\fancyhead[R]{\sffamily{\leftmark}}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+\pagestyle{custom}
+% Override Chapter pages where the report document class sets \thispagestyle{plain}
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\sffamily{\thepage}}
+}
 
 \pagenumbering{arabic}
 
