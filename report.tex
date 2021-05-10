@@ -10,7 +10,6 @@
 \usepackage{titlesec}
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX} 
-%\setmainfont{Newsreader}
 \setsansfont{Lato}[
 	Path = fonts/Lato/,
 	Extension = .otf,
@@ -36,18 +35,20 @@
 	BoldItalicFont = *-BoldItalic,
 ]
 
-\titleformat{\chapter}[display]
-  {\normalfont\sffamily\huge\bfseries}
-  {\thechapter}{20pt}{\Huge}
+\titleformat
+    {\chapter} % type of title to format
+    [display] % shape
+    {\sffamily\Huge\bfseries\raggedleft} % how to format it
+    {\thechapter} % label
+    {0pt} % seperator between label and the chapter name below it.
+    {\titlerule\vspace{2pt}\titlerule[1pt]\vspace{5pt}}
+
 \titleformat{\section}
-  {\normalfont\sffamily\Large\bfseries}
-  {\thesection}{1em}{}
+    {\sffamily\Large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
-  {\normalfont\sffamily\large\bfseries}
-  {\thesubsection}{1em}{}
+    {\sffamily\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
-  {\normalfont\sffamily\normalsize\bfseries}
-  {\thesubsubsection}{1em}{}
+    {\sffamily\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 
 % code
