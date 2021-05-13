@@ -4,8 +4,7 @@
 import sys
 import fontforge
 
-def convert_to_otf(path: str):
-    font = fontforge.open(path)
+def convert_to_otf(path: str): font = fontforge.open(path)
     new_file_name = path.replace(".ttf", ".otf")
     font.generate(new_file_name)
 
@@ -58,9 +57,6 @@ from intruders.
         printf("line %d, invalid login directory: %s\n", NR, $0) }
 \end{minted}
 
-
-\section{Slanted}
-\textsl{\lipsum[1]}
 
 \section{Italic}
 \textit{\lipsum[2]}

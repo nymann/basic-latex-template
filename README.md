@@ -1,4 +1,25 @@
 # Basic LaTeX template
+*Inspired by the style of the book [The Go Programming
+Language](https://www.gopl.io/)*
+
+## Usage
+Github templates doesn't support Git LFS out of the box, here's what you have to
+do to download the missing files:
+```sh
+git lfs fetch --all https://github.com/nymann/basic-latext-template master
+git lfs push --all origin master
+```
+This will fetch all the LFS files from the template repository and populate
+`.git/lfs/objects`, and then upload all those files to your repository.
+
+## Used packages
+- fancyhdr
+- fontspec
+- geometry
+- graphicx
+- lipsum (only for generating filler text)
+- minted
+- titlesec
 
 ## Workflows
 
