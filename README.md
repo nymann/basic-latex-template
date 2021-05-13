@@ -21,6 +21,10 @@ This will fetch all the LFS files from the template repository and populate
 - minted
 - titlesec
 
+## Preview
+![record](https://user-images.githubusercontent.com/7005867/117787126-72e50a80-b246-11eb-940a-776212d3f053.gif)
+
+
 ## Workflows
 
 I have a terminal window open with `ls report.tex chapters/*.tex | entr make`
