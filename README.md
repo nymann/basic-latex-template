@@ -6,7 +6,7 @@ Language](https://www.gopl.io/)*
 Github templates doesn't support Git LFS out of the box, here's what you have to
 do to download the missing files:
 ```sh
-git lfs fetch --all https://github.com/nymann/basic-latext-template master
+git lfs fetch --all https://github.com/nymann/basic-latex-template master
 git lfs push --all origin master
 ```
 This will fetch all the LFS files from the template repository and populate
